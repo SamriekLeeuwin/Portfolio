@@ -3,57 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Sem</title>
-    <st
-        }
-    </style>
+    <title>Sem's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav> 
+        <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
- 
-    <main>
-        <section>
-            <h1>Home</h1>
-            <p>Welcome to my portfolio website</p>
-            <p>Here you can find information about me and my projects</p>
-            <p>Feel free to contact me if you have any questions</p>
-            <p>Click on the links above to navigate through the website</p>
-        </section>
-
-        <section id="about-me">
-            <h2>About me</h2>
-            <p>My name is Sem and I am a web developer</p>
-            <p>I am passionate about creating websites and web applications</p>
-            <p>My goal is to create user-friendly and visually appealing websites</p>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Here are some of the projects I have worked on</p>
-            <ul>
-                <li>Project 1</li>
-                <li>Project 2</li>
-                <li>Project 3</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to contact me if you have any questions</p>
-            <p>Email:</p>
-        </section>
-    </main>
-
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Sem</h1>
+            <p>Front-End Developer passionate about building elegant and functional web experiences.</p>
+            <button>Download CV</button>
+        </div>
+        <img src="profile.jpg" alt="Sem's Profile Picture">
+    </section>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a dedicated web developer with a passion for creating stunning digital experiences.</p>
+    </section>
+    
+    <section id="skills">
+        <h2>Technologies</h2>
+        <div class="tech-stack">
+            <div class="tech">JavaScript</div>
+            <div class="tech">React</div>
+            <div class="tech">Next.js</div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-list">
+            <div class="project">Project 1</div>
+            <div class="project">Project 2</div>
+            <div class="project">Project 3</div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email:</p>
+    </section>
+    
     <footer>
-        <p>&copy; 2023 Sem's Portfolio</p>
+        <p>&copy; 2025 Sem's Portfolio</p>
     </footer>
 </body>
 </html>
