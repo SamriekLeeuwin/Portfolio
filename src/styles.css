@@ -1,0 +1,292 @@
+/* Algemene instellingen */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-box {
+    background-color: #611bf8;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #111827;
+}
+
+.navbar-center a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-center a:hover {
+    color: #611bf8;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-input {
+    padding: 6px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 999px;
+    background-color: #f1f5f9;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.icon-btn {
+    font-size: 1.2rem;
+    color: #4b5563;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icon-btn:hover {
+    color: #611bf8;
+}
+
+.profile-menu {
+    position: relative;
+}
+
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    min-width: 150px;
+    z-index: 999;
+}
+
+.dropdown a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #374151;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.dropdown a:hover {
+    background-color: #f3f4f6;
+    color: #611bf8;
+}
+
+.profile-menu:hover .dropdown {
+    display: block;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    padding: 4rem 1rem;
+    background-color: #ffffff;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+.hero-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 999px;
+    text-decoration: none;
+    margin-right: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #611bf8;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4a0ed8;
+}
+
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb;
+}
+
+.hero-image img {
+    max-width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/*/* ===== Project Section ===== */
+#projects {
+    background-color: #f9fafb;
+    padding: 4rem 1rem;
+}
+
+#projects h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+#projects h2 i {
+    color: #611bf8;
+    font-size: 1.5rem;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.project {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    flex: 1 1 300px;
+    max-width: 350px;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+}
+
+.project h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: #111827;
+}
+
+.project p {
+    margin: 0.2rem 0 1rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+.project strong {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.project ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.project ul li {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #9333ea;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.project a i {
+    margin-right: 6px;
+}
+
+.project a:hover {
+    color: #7e22ce;
+}
+
+@media (max-width: 768px) {
+    .project-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
