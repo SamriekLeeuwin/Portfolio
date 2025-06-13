@@ -44,6 +44,13 @@ body {
     font-size: 1.2rem;
     color: #111827;
 }
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
 
 .navbar-center a {
     margin: 0 1rem;
@@ -86,14 +93,16 @@ body {
 .profile-menu {
     position: relative;
 }
-
 .profile-pic {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+    width: 40px; /* kleiner of groter maken naar wens */
+    height: 40px;
+    border-radius: 50%; /* maakt 'm rond */
     object-fit: cover;
-    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* zachte schaduw */
+    background-color: white; /* als achtergrond van img wit is */
+    border: 2px solid #e5e7eb;
 }
+
 
 .dropdown {
     display: none;
@@ -125,7 +134,7 @@ body {
     display: block;
 }
 
-/* ================= HERO SECTION ================= */
+/*  HERO SECTION  */
 .hero {
     padding: 4rem 1rem;
     background-color: #ffffff;
@@ -188,6 +197,7 @@ body {
 
 .hero-image img {
     max-width: 320px;
+    width: 100%;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }

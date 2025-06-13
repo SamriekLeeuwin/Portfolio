@@ -4,19 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sem Leeuwin – Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <!-- Navbar -->
 <header class="navbar">
-    <div class="container">
+    <div class="navbar-content">
         <div class="navbar-left">
-            <div class="icon-box">
-                <i class="fa-solid fa-terminal"></i>
-            </div>
+            <div class="icon-box"><i class="fa-solid fa-terminal"></i></div>
             <span class="brand-name">Sem Leeuwin</span>
         </div>
         <nav class="navbar-center">
@@ -27,10 +25,12 @@
             <a href="#contact">Contact</a>
         </nav>
         <div class="navbar-right">
-            <input type="text" placeholder="Search..." class="search-input">
+            <input type="text" placeholder="Search..." class="search-input" />
             <i class="fa-regular fa-bell icon-btn"></i>
             <div class="profile-menu">
-                <img src="/assets/IMG_0047-removebg-preview.png" alt="Sem" class="profile-pic">
+                <img src="../assets/IMG_0047-removebg-preview.png" alt="Sem Leeuwin" class="profile-pic"/>
+
+
                 <div class="dropdown">
                     <a href="#">Profile</a>
                     <a href="#">Settings</a>
@@ -53,59 +53,114 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="/assets/IMG_0047-removebg-preview.png" alt="Sem Leeuwin">
+          <img src="../assets/IMG_0047-removebg-preview.png" height="577"width="433" alt="Semriek Profile Picture" />
         </div>
     </div>
 </section>
 
-<<section id="projects">
+<!-- Projects Section -->
+<section id="projects">
     <div class="container">
-        <h2><i class="fas fa-code"></i> Mijn Projecten</h2>
-        <div class="project-list">
+        <h2><i class="fa-solid fa-code"></i> My Work</h2>
 
-            <!-- Project 1 -->
+        <div class="project-toggle">
+            <button class="tab-button active" onclick="showTab('personal', event)">Personal Projects</button>
+            <button class="tab-button" onclick="showTab('school', event)">School Projects</button>
+        </div>
+
+        <!-- Personal -->
+        <div id="personal" class="project-tab active">
             <div class="project">
-                <h3><i class="fas fa-wallet"></i> Budget App - Backend (Work in Progress)</h3>
-                <p><strong>Node.js / Express / MySQL</strong></p>
-                <p>Een backend voor budgetbeheer met registratie, login en gebruikersopslag.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> Registratie & login API</li>
-                    <li><i class="fas fa-database"></i> MySQL database</li>
-                    <li><i class="fas fa-key"></i> JWT integratie gepland</li>
-                </ul>
-                <a href="https://github.com/SamriekLeeuwin/budgett-app" target="_blank"><i class="fab fa-github"></i> Bekijk op GitHub</a>
+                <h3><i class="fa-solid fa-coins"></i> SemPro – Budget Planner</h3>
+                <p><strong>TypeScript / JavaScript / MySQL / HTML / CSS</strong></p>
+                <p>A budget planner to track income and expenses, set savings goals, and visualize progress with a modern UI.</p>
+                <div class="slider">
+                    <button class="prev">&#10094;</button>
+                    <div class="slides">
+                        <img src="assets/screenshots/sempro-1.png" class="slide active" alt="SemPro 1">
+                        <img src="assets/screenshots/sempro-2.png" class="slide" alt="SemPro 2">
+                    </div>
+                    <button class="next">&#10095;</button>
+                </div>
             </div>
 
-            <!-- Project 2 -->
             <div class="project">
-                <h3><i class="fas fa-graduation-cap"></i> StudyBuddy</h3>
-                <p><strong>Java / Spring Boot / OCR</strong></p>
-                <p>Een slimme studieplanner die je helpt met plannen en motivatie.</p>
-                <ul>
-                    <li><i class="fas fa-upload"></i> Huiswerk uploaden</li>
-                    <li><i class="fas fa-brain"></i> Studieplan op maat</li>
-                    <li><i class="fas fa-calendar-check"></i> Dagelijkse check-ins</li>
-                </ul>
-                <a href="https://github.com/SamriekLeeuwin/studybuddy" target="_blank"><i class="fab fa-github"></i> Bekijk op GitHub</a>
+                <h3><i class="fa-solid fa-brain"></i> StudyBuddy (In Progress)</h3>
+                <p><strong>Java / Spring Boot / OCR / PostgreSQL (Planned)</strong></p>
+                <p>A smart study planner that uses OCR to scan homework, generate schedules, and give daily check-ins to stay on track.</p>
+                <div class="slider">
+                    <button class="prev">&#10094;</button>
+                    <div class="slides">
+                        <img src="assets/screenshots/studybuddy-1.png" class="slide active" alt="StudyBuddy 1">
+                        <img src="assets/screenshots/studybuddy-2.png" class="slide" alt="StudyBuddy 2">
+                    </div>
+                    <button class="next">&#10095;</button>
+                </div>
+                <a href="https://github.com/SamriekLeeuwin/studybuddy" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a>
+            </div>
+        </div>
+
+        <!-- School -->
+        <div id="school" class="project-tab">
+            <div class="project">
+                <h3><i class="fa-solid fa-euro-sign"></i> Tikkie Clone</h3>
+                <p><strong>HTML / CSS / JavaScript</strong></p>
+                <p>A simplified Tikkie payment request UI clone with interactive mock functionality and mobile-first layout.</p>
+                <div class="slider">
+                    <button class="prev">&#10094;</button>
+                    <div class="slides">
+                        <img src="assets/screenshots/tikkie-1.png" class="slide active" alt="Tikkie 1">
+                        <img src="assets/screenshots/tikkie-2.png" class="slide" alt="Tikkie 2">
+                    </div>
+                    <button class="next">&#10095;</button>
+                </div>
             </div>
 
-            <!-- Project 3 -->
             <div class="project">
-                <h3><i class="fas fa-chart-line"></i> SM3 Verkiezingsplatform - Backend</h3>
-                <p><strong>Java / Spring Boot / JWT / Swagger</strong></p>
-                <p>Backend voor een veilige verkiezingsapplicatie met volledige API-documentatie.</p>
-                <ul>
-                    <li><i class="fas fa-lock"></i> JWT authenticatie & autorisatie</li>
-                    <li><i class="fas fa-code-branch"></i> REST API structuur</li>
-                    <li><i class="fas fa-vial"></i> Swagger + unit tests</li>
-                </ul>
-                <a href="https://github.com/SamriekLeeuwin/sm3-backend" target="_blank"><i class="fab fa-github"></i> Bekijk op GitHub</a>
+                <h3><i class="fa-solid fa-users"></i> Coders Community Platform</h3>
+                <p><strong>HTML / CSS / JavaScript</strong></p>
+                <p>A forum-style community site where developers can ask questions and share advice, built as a team project.</p>
+                <div class="slider">
+                    <button class="prev">&#10094;</button>
+                    <div class="slides">
+                        <img src="assets/screenshots/community-1.png" class="slide active" alt="Community 1">
+                        <img src="assets/screenshots/community-2.png" class="slide" alt="Community 2">
+                    </div>
+                    <button class="next">&#10095;</button>
+                </div>
             </div>
 
+            <div class="project">
+                <h3><i class="fa-solid fa-gamepad"></i> Game Store</h3>
+                <p><strong>TypeScript / JavaScript / OOP / HTML / CSS</strong></p>
+                <p>An online web shop with product filters, cart logic, and dynamic views for gaming products and accessories.</p>
+                <div class="slider">
+                    <button class="prev">&#10094;</button>
+                    <div class="slides">
+                        <img src="assets/screenshots/gamestore-1.png" class="slide active" alt="Store 1">
+                        <img src="assets/screenshots/gamestore-2.png" class="slide" alt="Store 2">
+                    </div>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3><i class="fa-solid fa-scale-balanced"></i> Youth Voting Platform</h3>
+                <p><strong>Java / Spring Boot / PostgreSQL / Vue / Docker</strong></p>
+                <p>A voting site for students to register, log in, take political quizzes, and view national election results with JWT and Docker deployment.</p>
+                <div class="slider">
+                    <button class="prev">&#10094;</button>
+                    <div class="slides">
+                        <img src="assets/screenshots/voting-1.png" class="slide active" alt="Voting 1">
+                        <img src="assets/screenshots/voting-2.png" class="slide" alt="Voting 2">
+                    </div>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-
+<script src="script.js"></script>
 </body>
 </html>
