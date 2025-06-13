@@ -350,8 +350,57 @@ body {
 .project a:hover {
     color: #7e22ce;
 }
+/* ==== Devlog Styling ==== */
+#devlog {
 
-@media (max-width: 768px) {
+    padding: 4rem 1rem;
+    background-color: #f3f4f6;
+}
+
+.devlog-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.devlog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.devlog-list .log-entry {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+.devlog-list .log-entry .badge {
+    background-color: #e5e7eb;
+    color: #374151;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+}
+.log-entry .entry-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.log-entry .log-message {
+    font-size: 0.95rem;
+
+
+}
+
+    @media (max-width: 768px) {
     .project-list {
         flex-direction: column;
         align-items: center;

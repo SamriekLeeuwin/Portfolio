@@ -1,29 +1,45 @@
 async function fetchGitHubActivity() {
-    const username = "SamriekLeeuwin"; //
+    const username = "SamriekLeeuwin";
     const res = await fetch(`https://api.github.com/users/${username}/events/public`);
     const data = await res.json();
 
-    const list = document.getElementById("github-activity");
-    list.innerHTML = "";
+    const container = document.getElementById("github-activity");
+    container.innerHTML = "";
 
     data.slice(0, 5).forEach(event => {
-        let item = document.createElement("li");
-        let type = event.type;
-        let repo = event.repo.name;
-        let date = new Date(event.created_at).toLocaleString();
+        const { type, repo, created_at, payload } = event;
+        const date = new Date(created_at).toLocaleString();
+
+        let icon = "";
+        let color = "";
+        let message = "";
 
         if (type === "PushEvent") {
-            item.textContent = `Pushed to ${repo} at ${date}`;
+            icon = "fa-solid fa-code";
+            color = "#3b82f6";
+            message = `Commit to <strong>${repo.name}</strong>`;
         } else if (type === "PullRequestEvent") {
-            item.textContent = `Pull request on ${repo} at ${date}`;
+            icon = "fa-solid fa-code-pull-request";
+            color = "#8b5cf6";
+            message = `PR on <strong>${repo.name}</strong>`;
         } else if (type === "IssuesEvent") {
-            item.textContent = `Issue ${event.payload.action} on ${repo} at ${date}`;
-        } else {
-            return;
+            icon = "fa-solid fa-circle-exclamation";
+            color = "#f59e0b";
+            message = `Issue ${payload.action} on <strong>${repo.name}</strong>`;
         }
 
-        list.appendChild(item);
+        if (message) {
+            const entry = document.createElement("div");
+            entry.className = "log-entry";
+            entry.innerHTML = `
+        <div class="entry-left">
+          <i class="${icon}" style="color:${color}; font-size:1.1rem;"></i>
+          <span class="log-message">${message}</span>
+        </div>
+        <span class="badge">${date}</span>
+      `;
+            container.appendChild(entry);
+        }
     });
 }
-
 fetchGitHubActivity();
