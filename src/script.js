@@ -1,36 +1,19 @@
-// Tabs wisselen
-function showTab(tabId, event) {
-    const tabs = document.querySelectorAll(".project-tab");
-    const buttons = document.querySelectorAll(".tab-button");
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".toggle-btn");
+    const sections = document.querySelectorAll(".project-section");
 
-    tabs.forEach(tab => tab.classList.remove("active"));
-    buttons.forEach(btn => btn.classList.remove("active"));
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const targetId = button.dataset.target;
 
-    document.getElementById(tabId).classList.add("active");
-    event.target.classList.add("active");
-}
+            // Toggle buttons
+            buttons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
 
-// Sliders per project
-document.querySelectorAll('.slider').forEach(slider => {
-    const slides = slider.querySelectorAll('.slide');
-    let currentIndex = 0;
-
-    const showSlide = (index) => {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
+            // Toggle sections
+            sections.forEach(section => {
+                section.classList.toggle("active", section.id === targetId);
+            });
         });
-    };
-
-    slider.querySelector('.prev').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
     });
-
-    slider.querySelector('.next').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-    });
-
-    // Init
-    showSlide(currentIndex);
 });
