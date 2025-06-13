@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build:
+      context: .   # map waar index.html en Dockerfile staan
+      dockerfile: Dockerfile
+    ports:
+      - "8088:80"
