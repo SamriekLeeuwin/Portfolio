@@ -1,3 +1,18 @@
+import { manualDevlog } from "./manual-devlog.js";
+
+function renderManualDevlog(container) {
+    manualDevlog.forEach(entry => {
+        const div = document.createElement("div");
+        div.className = "timeline-entry manual";
+        div.innerHTML = `
+      <h4><i class="fa-solid fa-pen-to-square" style="color:#10b981; margin-right:6px;"></i>${entry.title}</h4>
+      <p>${entry.content}</p>
+      <div class="timestamp">${entry.date}</div>
+    `;
+        container.appendChild(div);
+    });
+}
+
 async function fetchGitHubActivity() {
     const username = "SamriekLeeuwin";
     const res = await fetch(`https://api.github.com/users/${username}/events/public`);
@@ -10,9 +25,7 @@ async function fetchGitHubActivity() {
         const { type, repo, created_at, payload } = event;
         const date = new Date(created_at).toLocaleString();
 
-        let icon = "";
-        let color = "";
-        let message = "";
+        let icon = "", color = "", message = "";
 
         if (type === "PushEvent") {
             icon = "fa-solid fa-code";
@@ -29,17 +42,17 @@ async function fetchGitHubActivity() {
         }
 
         if (message) {
-            const entry = document.createElement("div");
-            entry.className = "log-entry";
-            entry.innerHTML = `
-        <div class="entry-left">
-          <i class="${icon}" style="color:${color}; font-size:1.1rem;"></i>
-          <span class="log-message">${message}</span>
-        </div>
-        <span class="badge">${date}</span>
+            const div = document.createElement("div");
+            div.className = "timeline-entry github";
+            div.innerHTML = `
+        <h4><i class="${icon}" style="color:${color}; margin-right:6px;"></i>${message}</h4>
+        <div class="timestamp">${date}</div>
       `;
-            container.appendChild(entry);
+            container.appendChild(div);
         }
     });
+
+    renderManualDevlog(container);
 }
+
 fetchGitHubActivity();

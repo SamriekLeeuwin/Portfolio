@@ -21,12 +21,16 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
-            <a href="#devlog">Devlog</a>
+
+
             <a href="#contact">Contact</a>
         </nav>
         <div class="navbar-right">
             <input type="text" placeholder="Search..." class="search-input" />
             <i class="fa-regular fa-bell icon-btn"></i>
+            <i id="devlog-toggle" class="fa-solid fa-terminal icon-btn with-dot" title="Activity Log"></i>
+
+
             <div class="profile-menu">
                 <img src="../assets/IMG_0047-removebg-preview.png" alt="Sem Leeuwin" class="profile-pic"/>
 
@@ -107,14 +111,17 @@
         </div>
     </div>
 </section>
-
-<section id="devlog">
-<div class="container devlog-container">
-    <h2><i class="fas fa-terminal"></i> Devlog</h2>
+<div id="devlog-panel" class="devlog-drawer hidden">
+    <h3>Activity Feed <span style="font-size: 0.85rem; color: #9ca3af;">(Devlog)</span></h3>
     <div id="github-activity" class="devlog-list"></div>
 </div>
-</section>
+
+
+
 <script>
+    document.getElementById("devlog-toggle").addEventListener("click", () => {
+        document.getElementById("devlog-panel").classList.toggle("show");
+    });
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -129,8 +136,8 @@
     });
 </script>
 
-<script src="./script.js" type="module"></script>
-<script src="./devlog.js" type="module"></script>
+<script src="js/script.js" type="module"></script>
+<script src="js/devlog.js" type="module"></script>
 
 </body>
 </html>
