@@ -3,298 +3,260 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sem Leeuwin – Code & Chaos</title>
+    <title>Sem Leeuwin - Student Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@300;400;600&display=swap" />
-<link rel="stylesheet" href="styles.css">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
 
-<!-- Navbar -->
-<header class="navbar">
+<!-- nav bar -->
+<nav class="navbar">
     <div class="container">
-        <div class="navbar-content">
-            <div class="navbar-left">
-                <div class="terminal-icon">
-                    <i class="fas fa-terminal"></i>
-                </div>
-                <span class="brand-name">sem.dev</span>
+        <div class="nav-content">
+            <div class="nav-left">
+                <i class="fas fa-code"></i>
+                <span class="logo">sem.dev</span>
             </div>
 
-            <nav class="navbar-center">
-                <a href="#home">~/home</a>
-                <a href="#projects">~/projects</a>
-                <a href="#about">~/about</a>
-                <a href="mailto:sem@example.com">~/contact</a>
-            </nav>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="mailto:sem@example.com">Contact</a>
+            </div>
 
-            <div class="navbar-right">
-                <div class="status-indicator">
-                    <div class="status-dot"></div>
-                    <span>working on studdybuddy</span>
-                </div>
-                <div class="coffee-counter">
-                    <i class="fas fa-coffee"></i>
-                    <span id="coffee-count">127</span>
+            <div class="nav-right">
+                <div class="status">
+                    <span class="status-dot"></span>
+                    <span>working on stuff</span>
                 </div>
             </div>
         </div>
     </div>
-</header>
+</nav>
 
-<!-- Hero Section -->
+<!-- main section -->
 <section class="hero" id="home">
     <div class="container">
-        <div class="hero-grid">
-            <div class="hero-content">
-                <div class="hero-subtitle">$ lifeofbugs</div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="intro">Hi, I'm</p>
                 <h1>Sem <span class="highlight">Leeuwin</span></h1>
-                <p class="hero-bio">
-                    I'm a third-year Software Engineering student who loves building things that actually work and help people.
-                    I’m especially into backend development, and I'm slowly diving into the world of cloud and DevOps.
-                    I learn best by experimenting, breaking stuff, reading docs  and sometimes asking ChatGPT where to look when I’m stuck.
-                    Curious how I work and think? <a href="#about">More about me →</a>
+                <p class="bio">
+                    I'm a third-year Software Engineering student who likes building things that work (most of the time).
+                    I'm into backend stuff and trying to learn cloud things. I learn by breaking stuff and googling a lot.
+                    Check out my projects below!
                 </p>
 
-
-                <div class="hero-stats">
+                <div class="stats">
                     <div class="stat">
-                        <div class="stat-number" id="commits-count">420</div>
-                        <div class="stat-label">Commits</div>
+                        <span class="stat-num">420</span>
+                        <span class="stat-label">commits</span>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">Cloud Cert in Progress</div>
+                        <span class="stat-num">3</span>
+                        <span class="stat-label">years studying</span>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">∞</div>
-                        <div class="stat-label">Code Refactors</div>
+                        <span class="stat-num">∞</span>
+                        <span class="stat-label">coffee cups</span>
                     </div>
                 </div>
 
-                <div class="hero-actions">
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-download"></i>
-                        Download CV
-                    </a>
+                <div class="buttons">
+                    <a href="#" class="btn btn-main">Download CV</a>
                     <a href="https://github.com/SamriekLeeuwin" class="btn btn-secondary" target="_blank">
                         <i class="fab fa-github"></i>
-                        GitHub Profile
+                        GitHub
                     </a>
                 </div>
             </div>
 
-            <div class="terminal-card">
+            <div class="terminal">
                 <div class="terminal-header">
-                    <div class="terminal-dot dot-red"></div>
-                    <div class="terminal-dot dot-yellow"></div>
-                    <div class="terminal-dot dot-green"></div>
-                    <div class="terminal-title">terminal</div>
-                </div>
-                <div class="terminal-body" id="github-activity">
-                    <div class="terminal-line">
-                        <span class="prompt">sem@laptop</span>:<span class="prompt">~</span>$ <span class="command">fetch github --latest</span>
+                    <div class="terminal-dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
                     </div>
-                    <div class="terminal-line output">Loading latest GitHub activity...</div>
+                    <span class="terminal-title">terminal</span>
                 </div>
-
+                <div class="terminal-content">
+                    <div class="terminal-line">
+                        <span class="prompt">sem@laptop:~$</span> <span class="command">git status</span>
+                    </div>
+                    <div class="terminal-line output">On branch main</div>
+                    <div class="terminal-line output">Your branch is up to date with 'origin/main'</div>
+                    <div class="terminal-line">
+                        <span class="prompt">sem@laptop:~$</span> <span class="cursor">_</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Projects Section -->
+<!-- projects section -->
 <section class="projects" id="projects">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">My <span class="text-gradient">Development Journey</span></h2>
-            <p class="section-subtitle">
-                Projects that taught me something, challenged me, or are still keeping me up at night.
-                Each one represents a step in my learning process.
-            </p>
+            <h2>My <span class="highlight">Projects</span></h2>
+            <p>Stuff I've been working on. Some work, some don't, all taught me something.</p>
         </div>
 
         <div class="project-tabs">
-            <button class="tab-btn active" data-tab="passion">Personal Projects</button>
-            <button class="tab-btn" data-tab="school">Academic Work</button>
+            <button class="tab-btn active" data-tab="personal">Personal</button>
+            <button class="tab-btn" data-tab="school">School</button>
         </div>
 
         <div class="tab-content">
-            <!-- Passion Projects -->
-            <div class="project-list active" id="tab-passion">
+            <!-- personal projects -->
+            <div class="project-list active" id="tab-personal">
                 <div class="project-grid">
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-icon">
-                                <i class="fas fa-piggy-bank"></i>
+                            <i class="fas fa-piggy-bank project-icon"></i>
+                            <div class="project-info">
+                                <h3>BudgetPlanner</h3>
+                                <span class="status working">Working on it</span>
                             </div>
-                            <div class="project-title">BudgetPlanner</div>
-                            <div class="project-status status-active">IN PROGRESS</div>
                         </div>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Express</span>
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JWT</span>
-
-                        <p class="project-description">
-                            This started as a simple budget app but became a real backend learning curve.
-                            I had trouble loading budget data dynamically and getting the right data from backend to frontend.
-                            JWT tokens were also tricky, with edge cases I didn’t expect.
-                            It’s still a work in progress, but I’ve learned a lot from every bug and mistake.
+                        <div class="tech-stack">
+                            <span class="tech">TypeScript</span>
+                            <span class="tech">Express</span>
+                            <span class="tech">MySQL</span>
+                            <span class="tech">JWT</span>
+                        </div>
+                        <p class="project-desc">
+                            Started as a simple budget app but got complicated real fast. 
+                            Had trouble with JWT tokens and getting data from backend to frontend.
+                            Still fixing bugs but learning a lot.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-tools"></i>
-                                Work in Progress
-                            </a>
+                            <a href="#" class="link">View Code</a>
+                            <a href="#" class="link">Demo (broken)</a>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-icon">
-                                <i class="fas fa-brain"></i>
+                            <i class="fas fa-brain project-icon"></i>
+                            <div class="project-info">
+                                <h3>StudyBuddy AI</h3>
+                                <span class="status planning">Planning</span>
                             </div>
-                            <div class="project-title">StudyBuddy AI</div>
-                            <div class="project-status status-active">PLANNING</div>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">Tesseract OCR</span>
-                            <span class="tech-tag">PostgreSQL</span>
+                        <div class="tech-stack">
+                            <span class="tech">Java</span>
+                            <span class="tech">Spring Boot</span>
+                            <span class="tech">PostgreSQL</span>
                         </div>
-                        <p class="project-description">
-                            Started this OCR-powered study planner but currently deep in documentation.
-                            I'm reading through all the guides and tutorials before diving in properly.
-                            Learning from my BudgetPlanner experience  better to understand the tools first
-                            than to struggle with configuration later.
+                        <p class="project-desc">
+                            Want to make an OCR study planner but still reading docs.
+                            Learned from BudgetPlanner - better to understand tools first than struggle later.
+                            Will start coding soon hopefully.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Early Code
-                            </a>
+                            <a href="#" class="link">Early Code</a>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-icon">
-                                <i class="fas fa-code"></i>
+                            <i class="fas fa-code project-icon"></i>
+                            <div class="project-info">
+                                <h3>This Website</h3>
+                                <span class="status done">Done</span>
                             </div>
-                            <div class="project-title">Portfolio Website</div>
-                            <div class="project-status status-active">LIVE</div>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">JSS</span>
-                            <span class="tech-tag">CSS Grid</span>
-                            <span class="tech-tag">Responsive Design</span>
+                        <div class="tech-stack">
+                            <span class="tech">HTML</span>
+                            <span class="tech">CSS</span>
+                            <span class="tech">JavaScript</span>
                         </div>
-                        <p class="project-description">
-                            I’ve built sites like this before, so coding it was a bit easier this time.
-                            The biggest difference was the planning —I actually thought through the layout and features first.
-                            Still improving it, but I’m proud that it finally reflects who I am as a developer.
+                        <p class="project-desc">
+                            Made this portfolio site. Not perfect but it's mine.
+                            Actually planned the layout this time instead of just coding.
+                            Still adding stuff when I think of it.
                         </p>
-
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Source Code
-                            </a>
+                            <a href="#" class="link">Source Code</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- School Projects -->
+            <!-- school projects -->
             <div class="project-list" id="tab-school">
                 <div class="project-grid">
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-icon">
-                                <i class="fas fa-mobile-alt"></i>
+                            <i class="fas fa-mobile-alt project-icon"></i>
+                            <div class="project-info">
+                                <h3>Tikkie Clone</h3>
+                                <span class="status done">Done</span>
                             </div>
-                            <div class="project-title">Tikkie Clone</div>
-                            <div class="project-status status-archived">COMPLETED</div>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
+                        <div class="tech-stack">
+                            <span class="tech">JavaScript</span>
+                            <span class="tech">HTML</span>
+                            <span class="tech">CSS</span>
                         </div>
-                        <p class="project-description">
-                            My first-ever project when I started studying ICT.
-                            I had to learn how JavaScript, CSS, and even browsers really work.
-                            It taught me the value of readable, reusable code — and just how chaotic frontend can feel at first.
+                        <p class="project-desc">
+                            My first project ever when I started studying.
+                            Had to learn how JavaScript actually works.
+                            Taught me that readable code is important.
                         </p>
-
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
+                            <a href="#" class="link">View Code</a>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-icon">
-                                <i class="fas fa-users"></i>
+                            <i class="fas fa-users project-icon"></i>
+                            <div class="project-info">
+                                <h3>Coder Community</h3>
+                                <span class="status done">Done</span>
                             </div>
-                            <div class="project-title">Coder Community Platform</div>
-                            <div class="project-status status-archived">COMPLETED</div>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
+                        <div class="tech-stack">
+                            <span class="tech">TypeScript</span>
+                            <span class="tech">HTML</span>
+                            <span class="tech">CSS</span>
                         </div>
-                        <p class="project-description">
-                            My first group project and my first time using TypeScript.
-                            I struggled with types, many-to-many data models, and UML — but learned how to break through together.
-                            A challenging but important step in working professionally.
+                        <p class="project-desc">
+                            First group project and first time using TypeScript.
+                            Struggled with types and UML but learned to work together.
+                            Important step in working professionally.
                         </p>
-
-
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                                View Project
-                            </a>
+                            <a href="#" class="link">View Project</a>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-icon">
-                                <i class="fas fa-vote-yea"></i>
+                            <i class="fas fa-vote-yea project-icon"></i>
+                            <div class="project-info">
+                                <h3>Youth Voting Platform</h3>
+                                <span class="status done">Done</span>
                             </div>
-                            <div class="project-title">Youth Voting Platform</div>
-                            <div class="project-status status-completed">GRADUATED</div>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">PostgreSQL</span>
+                        <div class="tech-stack">
+                            <span class="tech">Java</span>
+                            <span class="tech">Spring Boot</span>
+                            <span class="tech">Vue.js</span>
+                            <span class="tech">Docker</span>
                         </div>
-                        <p class="project-description">
-                            Secure voting platform with real-time results and interactive quizzes.
-                            Big learning project that involved XML handling, authentication, and complex data flows.
-                            Really pushed my backend development skills forward. frist time using java
+                        <p class="project-desc">
+                            Secure voting platform with real-time results.
+                            Big learning project with authentication and complex data.
+                            First time using Java, was challenging but fun.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
+                            <a href="#" class="link">View Code</a>
                         </div>
                     </div>
                 </div>
@@ -302,56 +264,7 @@
         </div>
     </div>
 </section>
-<script src="./devlog.js" type="module"></script>
 
-<script>
-    // Fun counter animations
-    let coffeeCount = 127;
-    let commitCount = 420;
-
-    setInterval(() => {
-        if (Math.random() > 0.7) {
-            coffeeCount++;
-            document.getElementById('coffee-count').textContent = coffeeCount;
-        }
-    }, 30000); // Every 30 seconds
-
-    // Tab functionality
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active from all
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.project-list').forEach(list => list.classList.remove('active'));
-
-            // Add active to clicked
-            btn.classList.add('active');
-            document.getElementById(`tab-${btn.dataset.tab}`).classList.add('active');
-        });
-    });
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(10, 10, 11, 0.95)';
-        } else {
-            navbar.style.background = 'rgba(10, 10, 11, 0.8)';
-        }
-    });
-
-
-</script>
+<script src="js/script.js"></script>
+</body>
+</html>
