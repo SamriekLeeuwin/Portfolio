@@ -1,0 +1,28 @@
+SEM LEEUWIN
+Student Developer
+semriekk@gmail.com | GitHub: SamriekLeeuwin
+
+EDUCATION
+Software Engineering Student (3rd Year)
+[Your University Name]
+Expected Graduation: [Year]
+
+SKILLS
+Programming Languages: JavaScript, TypeScript, Java, HTML, CSS
+Frameworks & Tools: Express.js, Spring Boot, MySQL, PostgreSQL
+Other: Git, Docker, Basic DevOps concepts
+
+PROJECTS
+BudgetPlanner - TypeScript/Express budget app (in progress)
+StudyBuddy AI - Java/Spring Boot OCR study planner (planning)
+Youth Voting Platform - Java/Spring Boot secure voting system
+Coder Community - TypeScript group project platform
+Tikkie Clone - JavaScript payment app clone
+
+LANGUAGES
+Dutch (Native), English (Fluent)
+
+INTERESTS
+Backend development, Cloud computing, DevOps, Learning new technologies
+
+[Add your actual information here!] 

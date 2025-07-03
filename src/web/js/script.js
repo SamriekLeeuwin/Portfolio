@@ -1,19 +1,46 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".toggle-btn");
-    const sections = document.querySelectorAll(".project-section");
+// Simple tab functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Tab switching
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const projectLists = document.querySelectorAll('.project-list');
 
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            const targetId = button.dataset.target;
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active from all tabs and content
+            tabButtons.forEach(b => b.classList.remove('active'));
+            projectLists.forEach(list => list.classList.remove('active'));
 
-            // Toggle buttons
-            buttons.forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
-
-            // Toggle sections
-            sections.forEach(section => {
-                section.classList.toggle("active", section.id === targetId);
-            });
+            // Add active to clicked tab and corresponding content
+            btn.classList.add('active');
+            const targetTab = btn.getAttribute('data-tab');
+            document.getElementById(`tab-${targetTab}`).classList.add('active');
         });
+    });
+
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Simple navbar background change on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(10, 10, 11, 0.95)';
+        } else {
+            navbar.style.background = 'rgba(10, 10, 11, 0.9)';
+        }
     });
 });
