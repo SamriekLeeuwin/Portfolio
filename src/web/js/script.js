@@ -44,3 +44,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Simple slideshow for project gallery
+(function() {
+  const gallery = document.querySelector('.project-gallery-slideshow');
+  if (!gallery) return;
+  const images = [
+    'assets/Gitlab.png',
+    'assets/Candidaten.png',
+    'assets/Homepage.png',
+    'assets/elections_uml.png'
+  ];
+  let current = 0;
+  const img = gallery.querySelector('.slide-img');
+  const dots = document.querySelectorAll('.slide-dots .dot');
+  function show(idx) {
+    img.src = images[idx];
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  gallery.querySelector('.prev').onclick = function() {
+    current = (current - 1 + images.length) % images.length;
+    show(current);
+  };
+  gallery.querySelector('.next').onclick = function() {
+    current = (current + 1) % images.length;
+    show(current);
+  };
+  // Keyboard support
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') gallery.querySelector('.prev').click();
+    if (e.key === 'ArrowRight') gallery.querySelector('.next').click();
+  });
+  // Lightbox
+  let lightbox = document.createElement('div');
+  lightbox.className = 'lightbox-overlay';
+  lightbox.innerHTML = '<img class="lightbox-img" src="" alt="Enlarged image" />';
+  document.body.appendChild(lightbox);
+  const lightboxImg = lightbox.querySelector('.lightbox-img');
+  img.onclick = function() {
+    lightboxImg.src = images[current];
+    lightbox.style.display = 'flex';
+  };
+  lightbox.onclick = function(e) {
+    if (e.target === lightbox) lightbox.style.display = 'none';
+  };
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') lightbox.style.display = 'none';
+  });
+  lightbox.style.display = 'none';
+  show(current);
+})();

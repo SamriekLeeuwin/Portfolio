@@ -324,15 +324,20 @@ body {
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column;
     background: #1a1a22;
-    border: 1px solid #334155;
-    border-radius: 6px;
-    padding: 20px;
+    border: 1.5px solid #4b2996;
+    border-radius: 10px;
+    padding: 24px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 24px rgba(162,89,255,0.08);
+    transition: box-shadow 0.2s, border 0.2s;
 }
 
 .project-card:hover {
-    border-color: #7c3aed;
+    border-color: #a259ff;
+    box-shadow: 0 8px 32px rgba(162,89,255,0.16);
 }
 
 .project-header {
@@ -355,9 +360,9 @@ body {
 }
 
 .project-info h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #e2e8f0;
+    color: #fff;
+    letter-spacing: 0.02em;
+    font-size: 1.2rem;
 }
 
 .status {
@@ -399,16 +404,11 @@ body {
     font-family: 'JetBrains Mono', monospace;
 }
 
-.project-desc {
-    color: #94a3b8;
-    margin-bottom: 15px;
-    line-height: 1.4;
-    font-size: 14px;
-}
-
-.project-desc strong {
-    color: #e2e8f0;
-    font-weight: 600;
+.project-desc, .project-card strong, .project-card em {
+    color: #eaeaea;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
 }
 
 .project-links {
@@ -416,15 +416,29 @@ body {
     gap: 12px;
 }
 
-.link {
-    color: #64748b;
+.link, .link-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 6px;
+    background: #1a1a22;
+    color: #7c3aed;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
     text-decoration: none;
-    font-size: 13px;
-    transition: color 0.2s;
+    margin: 6px 0;
+    border: 1.5px solid #7c3aed;
+    box-shadow: none;
+    transition: background 0.2s, color 0.2s, border 0.2s, transform 0.1s;
+    letter-spacing: 0.03em;
 }
 
-.link:hover {
-    color: #7c3aed;
+.link:hover, .link-btn:hover, .link:focus, .link-btn:focus {
+    background: #7c3aed;
+    color: #fff;
+    border-color: #a259ff;
+    outline: 2px solid #fff;
+    transform: translateY(-2px) scale(1.04);
 }
 
 .project-list {
@@ -489,4 +503,124 @@ body {
         flex-direction: column;
         align-items: center;
     }
+    .project-card {
+        padding: 14px;
+    }
+    .slide-img {
+        max-width: 98vw;
+        max-height: 120px;
+    }
+}
+
+.project-gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.project-gallery img {
+    max-width: 180px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background: #fff;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.project-gallery-slideshow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    min-height: 180px;
+    position: relative;
+}
+
+.slide-btn {
+    z-index: 2;
+    background: linear-gradient(135deg, #a259ff 0%, #b983ff 100%);
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 12px rgba(162,89,255,0.18);
+}
+
+.slide-btn:hover, .slide-btn:focus {
+    background: linear-gradient(135deg, #b983ff 0%, #a259ff 100%);
+    transform: scale(1.08);
+    outline: none;
+}
+
+.slide-img {
+    max-width: 220px;
+    max-height: 140px;
+    border-radius: 6px;
+    border: 2.5px solid #fff;
+    background: #fff;
+    object-fit: cover;
+    box-shadow: 0 4px 24px rgba(162,89,255,0.18);
+    margin: 0 10px;
+    display: block;
+}
+
+.slide-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #b983ff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.dot.active {
+    background: #fff;
+    border-color: #a259ff;
+}
+
+/* Accessibility: focus for all interactive elements */
+.link:focus, .link-btn:focus, .slide-btn:focus {
+    outline: 2.5px solid #fff;
+    outline-offset: 2px;
+}
+
+body, .project-card, .project-header, .project-desc, .btn, .link, .slide-btn {
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(30, 24, 54, 0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(162,89,255,0.18);
+    background: #fff;
+    border: 3px solid #a259ff;
+    transition: box-shadow 0.2s;
 }
